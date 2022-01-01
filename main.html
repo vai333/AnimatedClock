@@ -1,0 +1,54 @@
+<html class="main">
+    <link rel="stylesheet" href="style.css"> <!--linking the stylesheet here using link-->
+    <head>
+        <title>Watch</title>
+    </head>
+    <body>
+        <audio id="tick">
+            <source src="clocktick.mp3">
+        </audio>
+        <div class="mainsvg">
+            <svg width ="400" height ="400" viewbox=" -100 -100 200 200">
+
+                <circle  
+                    cx="0" 
+                    cy="0" 
+                    r="85" 
+                    stroke="#805919"
+                    storke-width="5"
+                    pathlength="60"/> 
+
+                <circle 
+                    class="outercircle" 
+                    cx="0" 
+                    cy="0" 
+                    r="80" 
+                    pathlength="60"/>    <!-- he we are creating the outer clocks shape -->
+
+                    <circle 
+                    class="outercirclehour" 
+                    cx="0" 
+                    cy="0" 
+                    r="80"
+                    pathlength="60"/>
+
+                    <text class="textstyle" id="text_element" x="-5" y ="40">00</text>
+
+                    <g id="hour_hand">
+                        <line x1="0" y1="-3" x2="0" y2="-10" stroke="white" stroke-width="2" />
+                        <line x1="0" y1="-10" x2="0" y2="-40" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                    </g>
+                    <g id="minute_hand">
+                        <line x1="0" y1="-3" x2="0" y2="-10" stroke="white" stroke-width="2" />
+                        <line x1="0" y1="-10" x2="0" y2="-55" stroke="white" stroke-width="4" stroke-linecap="round"/> <!--here the clock of the hands are given shape in the SVG tag-->
+                    </g>
+                    <g id="second_hand">
+                        <line x1="0" y1="-3" x2="0" y2="-65" stroke="yellow" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="0" y1="10" x2="0" y2="4" stroke="yellow" stroke-width="2" stroke-linecap="round"/>
+                    </g>
+                    <circle  cx="0" cy="0" r="3" fill="none" stroke="white" stroke-width="1.5"/>
+            </svg>
+        </div>
+        <script src="./index.js"></script> <!-- here the javascript file is linked -->
+        </body>
+</html>

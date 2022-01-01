@@ -1,0 +1,25 @@
+
+const hoursElement = document.getElementById("hour_hand");
+const minutesElement = document.getElementById("minute_hand");
+const secondsElement = document.getElementById("second_hand");      // here we are accessing the DOM elements in variables for further 
+const textElement = document.getElementById("text_element");        // manipulations.
+let sound = document.getElementById("tick");
+
+let showdate=true;
+function animate()
+{
+    const date = new Date();
+    const day = date.getDate();
+    ampm = date.gethours>12? "AM":"PM";
+    const hour = date.getHours() + date.getMinutes() / 60;
+    const minute = date.getMinutes() + date.getSeconds() / 60; 
+    const second = date.getSeconds();
+    textElement.textContent = showdate ? day : ampm;
+  hoursElement.setAttribute("transform", `rotate(${(360 / 12) * hour})`);
+  minutesElement.setAttribute("transform", `rotate(${(360 / 60) * minute})`);  // this how you rotate the hands of the clocks.
+  secondsElement.setAttribute("transform", `rotate(${(360 / 60) * second})`);
+    requestAnimationFrame(animate);                                            // we request the animate recursively here.
+}
+requestAnimationFrame(animate);         
+textElement.addEventListener( "click" ,() =>{ showdate=!showdate; });
+
