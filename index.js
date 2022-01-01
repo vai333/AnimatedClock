@@ -4,8 +4,6 @@ const secondsElement = document.getElementById("second_hand");      // here we a
 const textElement = document.getElementById("text_element");        // manipulations.
 let sound = document.getElementById("tick");
 
-setInterval(function(){sound.play();},10);                          // ticking sound is given using this function
-
 let showdate=true;
 function animate()
 {
