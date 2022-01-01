@@ -15,7 +15,7 @@ function animate()
     const hour = date.getHours() + date.getMinutes() / 60;
     const minute = date.getMinutes() + date.getSeconds() / 60; 
     const second = date.getSeconds();
-    textElement.textContent = showdate ? `${day}-${month}-${year}`: `---${ampm}----`;
+    textElement.textContent = showdate ? `${day}-${month}-${year}`: `---${ampm}---`;
   hoursElement.setAttribute("transform", `rotate(${(360 / 12) * hour})`);
   minutesElement.setAttribute("transform", `rotate(${(360 / 60) * minute})`);  // this how you rotate the hands of the clocks.
   secondsElement.setAttribute("transform", `rotate(${(360 / 60) * second})`);
